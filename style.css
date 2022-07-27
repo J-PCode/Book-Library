@@ -1,11 +1,26 @@
 /* styling */
-.container{
-    display:flex;
+*{
+  margin: 0;
+  padding: 0;
+
+}
+.fas{
+  color: #bf6415;
+}
+body{ 
+  background-color: #D9CCC1;
+}
+.container{ 
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+.btn{
+  
+}
 .logo{
+  margin: 50px;
     display:flex;
     flex-direction: column;
     align-items: center;

@@ -1,10 +1,10 @@
 // Book Class
 class Book {
-  constructor(title, author, read, pages) {
+  constructor(title, author, pages, read) {
     this.title = title;
     this.author = author;
-    this.read = read;
     this.pages = pages;
+    this.read = read;
   }
 }
 
@@ -16,7 +16,7 @@ class UI {
         title:'Book One',
         author: 'John Doe',
         pages: '210',
-        read: ''
+        read: 'checked'
       },
       {
         title:'Book two',
@@ -40,7 +40,10 @@ class UI {
       <td>${book.title}</td>
       <td>${book.author}</td>
       <td>${book.pages}</td> 
-      <td>${book.read}</td>
+      <td> <label class="switch">
+      <input type="checkbox" value=true id="read">
+      <span class="slider round"></span>
+    </label></td>
       <td><a href="#" class="btn btn-danger btn-sm delete">X</a></td>
       `;
       console.log(list, row)
@@ -53,5 +56,21 @@ class UI {
     document.addEventListener('DOMContentLoaded', UI.displayBooks);
 
     // Event : Add a book
+    document.querySelector('#book-form').addEventListener('submit', (e) =>{
+      // prevent actual submit
+      e.preventDefault();
+
+
+      // Get form values
+      const title = document.querySelector('#title').value;
+      const author = document.querySelector('#author').value;
+      const pages = document.querySelector('#pages').value;
+      const read = document.querySelector('#read').checked;
+
+      // Instantiate book
+      const book = new Book(title, author, pages, read);
+
+      console.log(e, book)
+    }) ;
 
     // Event: Remove a Book

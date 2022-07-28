@@ -2,7 +2,7 @@
 *{
   margin: 0;
   padding: 0;
-
+  box-sizing: border-box;
 }
 .fas{
   color: #bf6415;
@@ -16,13 +16,28 @@ body{
     justify-content: center;
     align-items: center;
 }
-
+.main{
+  width: 50vw;
+  text-align: left;
+}
 .logo{
   margin: 50px;
     display:flex;
     flex-direction: column;
     align-items: center;
     font-size: 24px;
+}
+
+.form-group{
+  width: 10vw;
+  padding: 15px;
+  text-align: left;
+}
+.form-control{
+  width: 10vw;
+}
+.form{
+  display:flex;
 }
 
 /** switch styling */

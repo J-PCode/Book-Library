@@ -1,33 +1,73 @@
 /* styling */
+
+/* classes */
+:root {
+  --red: #FFB30D;
+  --green: #085454;
+  --gray: #b9b9b9;
+  --blue:#001542;
+}
+
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-.fas{
-  color: #bf6415;
-}
-body{ 
-  background-color: #D9CCC1;
-}
 .container{ 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .main{
-  width: 50vw;
-  text-align: left;
+width: 50vw;
+text-align: left;
+}
+
+/* logo styling */
+.fas{
+  color: var(--green);
+}
+body{ 
+  background-color: white;
 }
 .logo{
   margin: 50px;
+  padding: 10px;
     display:flex;
     flex-direction: column;
     align-items: center;
     font-size: 24px;
+    font-weight: bolder;
+    color: var(--red);
 }
 
+/* table styling */
+
+table{
+  width: 100%;
+}
+table, td{
+  border: 1px solid;
+  border-collapse: collapse;
+}
+th, td{
+  height: 50px;
+  padding: 10px;
+}
+tr:nth-child(odd) {background-color: white}
+tr:nth-child(even) {background: var(--gray)}
+th{
+background-color: var(--green);
+color: white; 
+}
+
+/* buttons styling*/
+.btn-unread{
+  background-color: #FFB30D;
+}
+
+/* form styling */
 .form-group{
   width: 10vw;
   padding: 15px;

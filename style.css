@@ -4,7 +4,7 @@
 :root {
   --red: #FFB30D;
   --green: #085454;
-  --gray: #b9b9b9;
+  --gray: #F0F0F0;
   --blue:#001542;
 }
 
@@ -13,15 +13,19 @@
   padding: 0;
   box-sizing: border-box;
 }
+a, a:hover, a:focus, a:active {
+  text-decoration: none;
+  color: inherit;
+  }
 .container{ 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.main{
+.main, .footer{
 width: 50vw;
-text-align: left;
+text-align: center;
 }
 
 /* logo styling */
@@ -48,96 +52,152 @@ table{
   width: 100%;
 }
 table, td{
-  border: 1px solid;
+ 
   border-collapse: collapse;
 }
 th, td{
   height: 50px;
-  padding: 10px;
 }
-tr:nth-child(odd) {background-color: white}
-tr:nth-child(even) {background: var(--gray)}
+td{
+  padding: 5px;
+  text-align: center;
+  width: 20%;
+}
 th{
-background-color: var(--green);
-color: white; 
+  border-bottom: 1px solid;
+  border-top: 1px solid;
+  text-align: center;
+  }
+  
+  tbody tr:nth-child(odd) {    
+  background-color: white;
 }
+  tbody tr:nth-child(odd) {
+    background-color: var(--gray);
+  }
 
 /* buttons styling*/
-.btn-unread{
-  background-color: #FFB30D;
+.btn{
+  border: none;
+  color: white;
+  width: 100%;
+  height: 100%;
+  padding: 10px;  
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  border-radius: 50%;
 }
-
+.btn-unread{
+  background-color: var(--red);
+}
+.btn-read{
+  background-color: var(--green);
+}
+.delete{
+  display:flex;
+  justify-content: center;
+  align-self: center;
+  font-size:16px;
+  color: red;
+}
+#submit{
+  border-radius:8px;
+  background-color: var(--green);
+}
 /* form styling */
-.form-group{
-  width: 10vw;
-  padding: 15px;
-  text-align: left;
+.form{
+  display: flex;
 }
 .form-control{
-  width: 10vw;
+  width: 100%;
 }
-.form{
-  display:flex;
+input{
+  width: 100%;
+  margin: 5px;
+}
+.switch {
+  display: block;
+  position: relative;
+  left: 20%;
+  transform: translateX(-50%);
+  padding-left: 35px;
+  margin: 12px 0 12px 0;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
-/** switch styling */
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
-}
-/* Hide default HTML checkbox */
+/* Hide the browser's default checkbox */
 .switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-  
-  /* The slider */
-  .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    -webkit-transition: .4s;
-    transition: .4s;
-  }
-  
-  .slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
-  }
-  
-  input:checked + .slider {
-    background-color: #2196F3;
-  }
-  
-  input:focus + .slider {
-    box-shadow: 0 0 1px #2196F3;
-  }
-  
-  input:checked + .slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
-  }
-  
-  /* Rounded sliders */
-  .slider.round {
-    border-radius: 34px;
-  }
-  
-  .slider.round:before {
-    border-radius: 50%;
-  }
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.switch:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.switch input:checked ~ .checkmark {
+  background-color: var(--green);
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.switch input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.switch .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/* UI alerts */
+.alert-success, .alert-danger{
+  color: white;
+  font-size: 1.5em;
+  padding: 10px;
+  width: 50%;
+  text-align: center;
+}
+.alert-success{
+  background-color: var(--green);
+
+}
+.alert-danger{
+  background-color: var(--red);
+}

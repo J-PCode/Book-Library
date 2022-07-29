@@ -42,7 +42,7 @@ class UI {
       <td>${book.author}</td>
       <td>${book.pages}</td> 
       <td><a href="#" class="btn btn-read">${book.read}</a></td>
-      <td><a href="#" class="btn btn-danger btn-sm delete">X</a></td>
+      <td><a href="#" class="btn delete fa-solid fa-trash-can"></a></td>
       `;
     }else{
     row.innerHTML = `
@@ -50,7 +50,7 @@ class UI {
     <td>${book.author}</td>
     <td>${book.pages}</td> 
     <td><a href="#" class="btn btn-unread">${book.read}</a></td>
-    <td><a href="#" class="btn btn-danger btn-sm delete">X</a></td>
+    <td><a href="#" class="delete fa-solid fa-trash-can"></a></td>
     `;
   }
       console.log(list, row)
@@ -133,4 +133,3 @@ class UI {
       UI.deleteBook(e.target);
       UI.toggleRead(e.target);
     })
-    
